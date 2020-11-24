@@ -26,6 +26,7 @@ import { MeasuresComponent } from './Views/measures/measures.component';
 import { MeasureComponent } from './Views/measures/measure/measure.component';
 import { MeasureListComponent } from './Views/measures/measure-list/measure-list.component';
 import { TokenComponent } from './Views/token/token.component';
+import { SidebarComponent } from './Views/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { TokenComponent } from './Views/token/token.component';
     MeasureComponent,
     MeasureListComponent,
     TokenComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
