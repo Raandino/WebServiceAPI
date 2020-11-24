@@ -1,0 +1,10 @@
+
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden"  name="measure_id" #measure_id= "ngModel" [(ngModel)]="service.formData.measure_id">
+    <div class="form-group text-center">
+        <label for="" class="text-center">Measure</label>
+        <input name="measure1" #measure1= "ngModel" [(ngModel)]="service.formData.measure1" class="form-control" required>
+        <div class="validation-error" *ngIf="measure1.invalid && measure1.touched ">This Field is required</div>
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-danger">SUBMIT</button>
+</form>

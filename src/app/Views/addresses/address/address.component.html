@@ -1,0 +1,39 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden"  name="address_id" #address_id= "ngModel" [(ngModel)]="service.formData.address_id">
+    <div class="form-group">
+        <label for="">Address</label>
+        <input name="address_1" #address_1= "ngModel" [(ngModel)]="service.formData.address_1" class="form-control" required>
+        <div class="validation-error" *ngIf="address_1.invalid && address_1.touched ">This Field is required</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Aditional Address</label>
+        <input name="address_2"  #address_2= "ngModel" [(ngModel)]="service.formData.address_2" class="form-control">
+    </div>
+
+    
+
+    <div class="form-row ">
+
+        <div class="form-group col">
+            <label for="">City</label>
+            <input name="city" #city= "ngModel" [(ngModel)]="service.formData.city" class="form-control" required>
+        </div>
+        
+    
+        <div class="form-group col">
+            <label for="">Client ID</label>
+            <input name="client_id" #client_id= "ngModel" [(ngModel)]="service.formData.client_id" class="form-control" >
+        </div>
+
+        <div class="form-group col">
+            <label for="">Status</label>
+            <input name="status" #status= "ngModel" [(ngModel)]="service.formData.status" class="form-control" >
+        </div>
+    
+
+    </div>
+
+    
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-danger">SUBMIT</button>
+</form>

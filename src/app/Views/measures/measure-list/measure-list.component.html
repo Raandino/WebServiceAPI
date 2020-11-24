@@ -1,0 +1,10 @@
+<table class="table table-hover">
+    <tr class="bg-info text-light">
+        <td class="text-center col-11">Name</td>
+        <td class="col-1"></td>
+    </tr>
+    <tr *ngFor="let ms of service.list">
+        <td (click)="populateForm(ms)">{{ms.measure1}}</td>
+        <td><button  (click)="onDelete(ms.measure_id)" class="btn btn-sm btn-outline-danger ">X</button></td>
+    </tr>
+</table>
