@@ -12,10 +12,16 @@ export class ClientListComponent implements OnInit {
   constructor(public service : ClientService,
     private toastr : ToastrService) { }
 
+
+    clientList:any=[];
+    formatclientList:any=[];
+
   ngOnInit(): void {
     this.service.refreshList();
+    
   }
 
+  
   populateForm(cl: Client){
     this.service.formData = Object.assign({},cl);
   }

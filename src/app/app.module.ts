@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- 
+
 import { ToastrModule } from 'ngx-toastr';
 
 
-import { AppRoutingModule } from './Views/Default/app-routing.module';
-import { AppComponent } from './Views/Default/app.component';
+import { AppRoutingModule } from './Views/app/app-routing.module';
+import { AppComponent } from './Views/app/app.component';
 import { ClientComponent }     from './Views/clients/client/client.component';
 import { ClientsComponent }    from './Views/clients/clients.component';
 import { ClientListComponent } from './Views/clients/client-list/client-list.component';
@@ -27,6 +27,7 @@ import { MeasureComponent } from './Views/measures/measure/measure.component';
 import { MeasureListComponent } from './Views/measures/measure-list/measure-list.component';
 import { TokenComponent } from './Views/token/token.component';
 import { SidebarComponent } from './Views/sidebar/sidebar.component';
+import { LoginComponent } from './Views/login/login.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SidebarComponent } from './Views/sidebar/sidebar.component';
     MeasureListComponent,
     TokenComponent,
     SidebarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

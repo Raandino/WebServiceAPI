@@ -3,6 +3,7 @@ import { Client } from '../../Models/Client/client.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { TokenService } from '../../Views/token/token.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,13 +31,24 @@ export class ClientService {
   }
 
 
+  // refreshList (){
+  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
+  //   .toPromise().then(res => this.list=res as Client[]);
+  // }
+  
   refreshList (){
-    this.http.get(this.rootURL+'/clients',this.getHeaders())
+    this.http.get(this.rootURL+'/clients')
+    
     .toPromise().then(res => this.list=res as Client[]);
   }
 
 
-  getHeaders(){
+  
+
+  
+
+
+  getHeaders(){//return the token 
 
     let token=this.TokenService.getToken();
       const header = {

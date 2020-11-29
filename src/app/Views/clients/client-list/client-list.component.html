@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<!-- <table class="table table-hover">
     <tr class="bg-info text-light">
         <td>Name</td>
         <td>Email</td>
@@ -13,4 +13,41 @@
         <td (click)="populateForm(cl)">{{cl.phone}}</td>
         <td><button (click)="onDelete(cl.client_id)" class="btn btn-sm btn-outline-danger">X</button></td>
     </tr>
-</table>
+</table> -->
+
+<div class="mx-5 ">
+    <table class="table content-table w-100"   id="myTable" >
+        <thead >
+            <tr >
+                <td data-field="Name" data-sortable="true">Name</td>
+                <td data-field="Email" data-sortable="true">Email</td>
+                <td data-field="Password" data-sortable="true">Password</td>
+                <td data-field="Phone" data-sortable="true">Phone</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cl of service.list" class="active-row">
+                <td >{{cl.name}}</td>
+                <td >{{cl.email}}</td>
+                <td >{{cl.password_client}}</td>
+                <td >{{cl.phone}}</td>
+                <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+                    <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-body">
+                <app-client></app-client>
+            </div>
+        </div>
+    </div>
+</div>
