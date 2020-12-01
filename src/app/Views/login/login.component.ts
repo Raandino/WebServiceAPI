@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  resetForm (form?: NgForm){
-    console.log("NO SE RESET");
-    if(form != null){
-      form.resetForm();
-    }
-    this.service.formData ={
-      Username: '',
-      Password: ''
-    }
-  }
+  // resetForm (form?: NgForm){
+  //   console.log("NO SE RESET");
+  //   if(form != null){
+  //     form.resetForm();
+  //   }
+  //   this.service.formData ={
+  //     Username: '',
+  //     Password: ''
+  //   }
+  // }
 
   onLogin(form): void {
     this.service.login(form.value).subscribe(
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     response => {
       console.log('POST call in error', response);
       this.toastr.warning('Access Denied','Login');
-      this.resetForm();//No sirve 
+      //this.resetForm();//No sirve 
 
     }
     );

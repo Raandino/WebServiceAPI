@@ -1,0 +1,30 @@
+Here is the structure of the folders and what the things do 
+
+--app
+   |
+   |---auth-route "Here is the module and the route for the login"
+   |    
+   |
+   |---Controllers "all the services must be here"
+   |    
+   |
+   |---home-route "The module and router for the /home"
+   |    
+   |
+   |---models "Models of all the tables"
+   |    
+   |
+   |---router "Main router with redirections to the other two routers"
+   |    
+   |
+   |---views "All the componets are in here "
+   |     |
+   |     |--clients
+   |            |
+   |            |--client "The componetn to create or modify"
+   |            |
+   |            |--client-list "the list of registers"
+   |            |
+   |            |--files of the component  
+   |
+   |---app.module.ts "Main Module"
