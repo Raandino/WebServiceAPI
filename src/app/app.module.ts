@@ -12,6 +12,8 @@ import { AppComponent } from './Views/app/app.component';
 import { ClientComponent }     from './Views/clients/client/client.component';
 import { ClientsComponent }    from './Views/clients/clients.component';
 import { ClientListComponent } from './Views/clients/client-list/client-list.component';
+
+
 import { ClientService } from './Controllers/Client/client.service';
 import { HomeComponent } from './Views/home/home.component';
 import { RouterModule } from '@angular/router';
@@ -19,15 +21,21 @@ import appRoutes from './Router/routerConfig';
 
 // For MDB Angular Free
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AddressesComponent } from './Views/addresses/addresses.component';
-import { AddressComponent } from './Views/addresses/address/address.component';
-import { AddressListComponent } from './Views/addresses/address-list/address-list.component';
-import { MeasuresComponent } from './Views/measures/measures.component';
-import { MeasureComponent } from './Views/measures/measure/measure.component';
-import { MeasureListComponent } from './Views/measures/measure-list/measure-list.component';
 import { TokenComponent } from './Views/token/token.component';
 import { SidebarComponent } from './Views/sidebar/sidebar.component';
 import { LoginComponent } from './Views/login/login.component';
+import { InventoryComponent } from './Views/inventory/inventory.component';
+import { UsersComponent } from './Views/users/users.component';
+import { OrdersComponent } from './Views/orders/orders.component';
+import { ProductsComponent } from './Views/products/products.component';
+import { InventoryListComponent } from './Views/Inventory/inventory-list/inventory-list.component';
+import { ProductComponent } from './Views/products/product/product.component';
+import { ProductListComponent } from './Views/products/product-list/product-list.component';
+import { UserComponent } from './views/users/user/user.component';
+import { UserListComponent } from './views/users/user-list/user-list.component';
+import { OrderComponent } from './views/orders/order/order.component';
+import { OrderListComponent } from './views/orders/order-list/order-list.component';
+import { InventoryItemComponent } from './views/Inventory/inventory-item/inventory-item.component';
 
 
 @NgModule({
@@ -37,15 +45,21 @@ import { LoginComponent } from './Views/login/login.component';
     ClientsComponent,
     ClientListComponent,
     HomeComponent,
-    AddressesComponent,
-    AddressComponent,
-    AddressListComponent,
-    MeasuresComponent,
-    MeasureComponent,
-    MeasureListComponent,
     TokenComponent,
     SidebarComponent,
     LoginComponent,
+    InventoryComponent,
+    UsersComponent,
+    OrdersComponent,
+    ProductsComponent,
+    InventoryListComponent,
+    ProductComponent,
+    ProductListComponent,
+    UserComponent,
+    UserListComponent,
+    OrderComponent,
+    OrderListComponent,
+    InventoryItemComponent,
   ],
   imports: [
     BrowserModule,

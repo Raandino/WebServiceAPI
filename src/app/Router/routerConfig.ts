@@ -9,10 +9,12 @@ import { ClientsComponent }    from '../Views/clients/clients.component';
 import { ClientListComponent } from '../Views/clients/client-list/client-list.component';
 import { ClientService } from '../Controllers/Client/client.service';
 import { RouterModule } from '@angular/router';
-import { AddressesComponent } from '../Views/addresses/addresses.component';
-import { MeasuresComponent } from '../Views/measures/measures.component';
 import { TokenComponent } from '../Views/token/token.component';
 import {LoginComponent } from '../Views/login/login.component'
+import { InventoryComponent } from '../Views/inventory/inventory.component';
+import { OrdersComponent } from '../Views/orders/orders.component';
+import { UsersComponent } from '../Views/users/users.component';
+import { ProductsComponent } from '../Views/products/products.component';
 
 const appRoutes: Routes = [
   {
@@ -31,17 +33,26 @@ const appRoutes: Routes = [
     component: ClientsComponent
   },
   {
-    path: 'addresses',
-    component: AddressesComponent
-  },
-  {
-    path: 'measures',
-    component: MeasuresComponent
-  },
-  {
     path: 'token',
     component: TokenComponent
-  }
+  },
+  {
+    path: 'inventory',
+    component: InventoryComponent
+  },
+  {
+    path: 'orders',
+    component: OrdersComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
+  },
+
   
   
 ];
