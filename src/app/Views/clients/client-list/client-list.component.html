@@ -1,21 +1,6 @@
-<!-- <table class="table table-hover">
-    <tr class="bg-info text-light">
-        <td>Name</td>
-        <td>Email</td>
-        <td>Password</td>
-        <td>Phone</td>
-        <td></td>
-    </tr>
-    <tr *ngFor="let cl of service.list">
-        <td (click)="populateForm(cl)">{{cl.name}}</td>
-        <td (click)="populateForm(cl)">{{cl.email}}</td>
-        <td (click)="populateForm(cl)">{{cl.password_client}}</td>
-        <td (click)="populateForm(cl)">{{cl.phone}}</td>
-        <td><button (click)="onDelete(cl.client_id)" class="btn btn-sm btn-outline-danger">X</button></td>
-    </tr>
-</table> -->
 
 <div class="mx-5 ">
+    
     <table class="table content-table w-100"   id="myTable" >
         <thead >
             <tr >
@@ -32,7 +17,9 @@
                 <td >{{cl.email}}</td>
                 <td >{{cl.password_client}}</td>
                 <td >{{cl.phone}}</td>
-                <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+
+                <td>
+                    <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
                     <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
                     </td>
             </tr>

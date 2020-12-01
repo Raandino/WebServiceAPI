@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 
 import { AppRoutingModule } from './Views/app/app-routing.module';
@@ -41,13 +42,11 @@ import { InventoryItemComponent } from './views/Inventory/inventory-item/invento
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent,
-    ClientsComponent,
-    ClientListComponent,
-    HomeComponent,
+   
+   
+   
     TokenComponent,
-    SidebarComponent,
-    LoginComponent,
+   
     InventoryComponent,
     UsersComponent,
     OrdersComponent,
@@ -63,6 +62,7 @@ import { InventoryItemComponent } from './views/Inventory/inventory-item/invento
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

@@ -5,7 +5,6 @@ import { JwtResponseInterface} from '../../Models/Auth/jwt-response'
 import {tap} from 'rxjs/operators';
 import {observable, BehaviorSubject, Observable} from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +15,8 @@ export class AuthService {
   private token:string;
 
   constructor(private HttpClient: HttpClient) { }
+
+  formData : UserInterface
 
 login(user: UserInterface): Observable<JwtResponseInterface>{
   return this.HttpClient.post<JwtResponseInterface>(`${this.AUTH_SERVER}/Token`,

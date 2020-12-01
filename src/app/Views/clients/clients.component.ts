@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../Controllers/Client/client.service';
+import { Client } from 'src/app/Models/Client/client.model';
 
 @Component({
   selector: 'app-clients',
@@ -8,10 +9,12 @@ import { ClientService } from '../../Controllers/Client/client.service';
 })
 export class ClientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service : ClientService) { }
 
   ngOnInit(): void {
     
   }
-
+  populateForm(cl: Client){
+    this.service.formData = Object.assign({},cl);
+  }
 }

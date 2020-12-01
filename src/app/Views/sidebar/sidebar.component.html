@@ -1,4 +1,4 @@
- <div class="d-flex" id="content-wrapper">
+
         <!-- Sidebar -->
         <div id="sidebar-container" class="bg-primary">
             <div class="logo">
@@ -6,30 +6,25 @@
                 
             </div>
             <div class="menu">
-                <a href="#" routerLink="inventory"class="d-block text-color p-3 border-0 ">
+                <a href="#"  [routerLink]="['/home/inventory']" class="d-block text-color p-3 border-0 ">
                     <i class="icon ion-md-apps lead mr-2"></i>
                     Inventory</a>
 
-                <a href="#" routerLink="users" class="d-block text-color p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
+                <a href="#"  [routerLink]="['/home/users']" class="d-block text-color p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
                     Users</a>
 
-                <a href="#" routerLink="orders" class="d-block text-color p-3 border-0">
+                <a href="#"  [routerLink]="['/home/orders']" class="d-block text-color p-3 border-0">
                     <i class="icon ion-md-checkbox lead mr-2"></i>
                     Orders</a>
-                <a href="#" routerLink="clients" class="d-block text-color p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                <a href="#"  [routerLink]="['/home/clients']" class="d-block text-color p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
                     Clients</a>
-                <a href="#" routerLink="products"  class="d-block text-color p-3 border-0"> 
+                <a href="#"   [routerLink]="['/home/products']" class="d-block text-color p-3 border-0"> 
                     <i class="icon ion-md-headset lead mr-2"></i>
                     Products</a>
             </div>
         </div>
         <!-- Fin sidebar -->
-        <div class="w-100">
-        <!-- Page Content -->
-        <div id="content" class="bg-grey w-100">
-            
-            <router-outlet></router-outlet>
 
-        </div>
-        </div>
-    </div>
+        
+        
+    

@@ -3,13 +3,14 @@
       <div class="login-triangle"></div>
   
       <h2 class="login-header">Log in</h2>
-  
-      <form #frmLogin="ngForm" class="login-container" (ngSubmit)="onLogin(frmLogin)">
+      <!-- <form #form="ngForm" (submit)="onSubmit(form)" class="login-container" autocomplete="off"> -->
+
+      <form #form="ngForm" class="login-container" (submit)="onLogin(form)">
         <p>
           <input type="text" name="Username" placeholder="User" ngModel required>
         </p>
         <p>
-          <input type="password" name="Password" placeholder="Password" ngModel required>
+          <input type="password" name="Password" placeholder= "Password" ngModel required>
         </p>
         <p>
           <input type="submit" value="Send">

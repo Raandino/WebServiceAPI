@@ -10,23 +10,22 @@ import { ClientListComponent } from '../Views/clients/client-list/client-list.co
 import { ClientService } from '../Controllers/Client/client.service';
 import { RouterModule } from '@angular/router';
 import { TokenComponent } from '../Views/token/token.component';
-import {LoginComponent } from '../Views/login/login.component'
 import { InventoryComponent } from '../Views/inventory/inventory.component';
 import { OrdersComponent } from '../Views/orders/orders.component';
 import { UsersComponent } from '../Views/users/users.component';
 import { ProductsComponent } from '../Views/products/products.component';
-
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
-  { path: 'login', 
-    component: LoginComponent 
+  { path: 'auth', 
+    loadChildren: () => import('../auth-route/auth.module').then(m => m.AuthModule)
+    // loadChildren: '../auth/auth.module#AuthModule' 
   },
   { path: 'home', 
-    component: HomeComponent 
+    loadChildren: () => import('../home-route/home.module').then(m => m.HomeModule)
   },
   {
     path: 'clients',

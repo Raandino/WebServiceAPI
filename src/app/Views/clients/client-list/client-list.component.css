@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.form-group>input{
+    font-weight: bolder;
+}
+.form-group>label{
+    font-weight: lighter;
+}
+
+button[type="submit"]{
+    background-color: #67dfd4;
+    color: #fff;
+
+}
+.jumbotron{
+    background-color: #fff;
+    padding-top: 32px;
+}
+
+table tr:hover{
+    cursor: pointer;
+}
+
+input.ng-touched.ng-invalid{
+    border-color: #dc3545;
+}
+div.validation-error{
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.navbar{
+    font-size: larger;
+}
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    
+}
+
+
+
+
+
+#content-wrapper{
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-primary { background-color: var(--primary) !important; }
+
+.bg-light { background-color: var(--light) !important; }
+
+.bg-grey { 
+    background-color: var(--grey) !important;
+    
+}
+
+.bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
+
+.text-secondary{
+    color: var(--textSecondary) !important;
+    
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+
+}
+
+.text-color{
+    color: var(--text);
+}
+
+.text-color:hover{
+    color: var(--text);
+    filter: opacity(80%);
+    background-color: var(--secondary);
+
+    
+}
+
+.back{
+    background-color: var(--secondary);
+}
+
+#title-api{
+    color: var(--text);
+}
+
+
+#sidebar-container {
+    
+    min-height: 100vh;
+}
+  
+#sidebar-container .logo{
+    padding: 0.875rem 1.25rem;
+}
+  
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+
+
+.avatar {
+    max-width: 35px;
+}
+
+.btn-search {
+    right: 0;
+}
+
+.stat {
+    border-right: 1px solid var(--grey);
+}
+
+  
+@media (max-width: 768px) {
+    #sidebar-container {
+      display: none;
+    }
+    .stat {
+        border: 0;
+    }
+  }
+  
+
+  :root {
+      --primary: #121212;
+      --light: #ffffff;
+      --grey: #1c1822;
+      --text: #dfc7fd;
+      --textSecondary: #03dac5e7;
+      --secondary:  #1f1b24;
+      --secondary2:  #2f2638;
+  
+  }
+  .content-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 400px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .content-table thead tr {
+      background-color: var(--textSecondary);
+      color: var(--primary);
+      text-align: left;
+      font-weight: bold;
+    }
+    
+    .content-table th,
+    .content-table td {
+      padding: 12px 15px;
+    }
+    
+    .content-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    
+    .content-table tbody tr {
+      background-color: var(--secondary);
+    }
+    
+    .content-table tbody tr:last-of-type {
+      border-bottom: 2px solid var(--textSecondary);
+    }
+    
+    .content-table tbody tr.active-row {
+      font-weight: bold;
+      color: var(--textSecondary);
+    }
+    
