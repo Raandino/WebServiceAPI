@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.refreshToken().subscribe((res)=>{
+      console.log('Response', res)
       this.router.navigateByUrl('/home');
     })
 
