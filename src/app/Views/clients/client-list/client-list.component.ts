@@ -24,6 +24,7 @@ export class ClientListComponent implements OnInit {
   
   populateForm(cl: Client){
     this.service.formData = Object.assign({},cl);
+    
   }
 
 

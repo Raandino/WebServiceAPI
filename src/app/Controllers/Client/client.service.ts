@@ -17,30 +17,44 @@ export class ClientService {
               private TokenService : TokenService) { }
 
 
-  postClient (form : Client){
-    return this.http.post(this.rootURL+'/clients ',this.formData,this.getHeaders());
+  // postClient (form : Client){
+  //   return this.http.post(this.rootURL+'/clients ',this.formData,this.getHeaders());
+    
+  // }
+
+  // putClient (form : Client){
+  //   return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData,this.getHeaders());
+  // }
+
+  // deleteClient(id :number){
+  //   return this.http.delete(this.rootURL+'/clients/ '+id,this.getHeaders());
+  // }
+
+    postClient (form : Client){
+    return this.http.post(this.rootURL+'/clients ',this.formData);
     
   }
 
   putClient (form : Client){
-    return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData,this.getHeaders());
+    return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData);
   }
 
   deleteClient(id :number){
-    return this.http.delete(this.rootURL+'/clients/ '+id,this.getHeaders());
+    return this.http.delete(this.rootURL+'/clients/ '+id);
   }
 
 
-  // refreshList (){
-  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
-  //   .toPromise().then(res => this.list=res as Client[]);
-  // }
-  
+
   refreshList (){
-    this.http.get(this.rootURL+'/clients',this.getHeaders())
-    
+    this.http.get(this.rootURL+'/clients')
     .toPromise().then(res => this.list=res as Client[]);
   }
+  
+  // refreshList (){
+  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
+    
+  //   .toPromise().then(res => this.list=res as Client[]);
+  // }
 
 
   

@@ -43,7 +43,7 @@ export class ClientComponent implements OnInit {
   updateRecord(form : NgForm){
     this.service.putClient(form.value).subscribe(res =>{
       this.toastr.info('Updated Successfully','Client Register');
-      
+      this.service.refreshList();
     })
   }
 

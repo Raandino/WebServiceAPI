@@ -44,7 +44,11 @@ getHeaders(){
   let token=this.TokenService.getToken();
     const header = {
       headers: new HttpHeaders()
+<<<<<<< HEAD
         .set('Authorization',  `Bearer ${token}`)
+=======
+        //.set('Authorization',  `Bearer ${token.AccessToken}`)
+>>>>>>> acdfb047ffbbb8a9fdcb14edc14cb62a8fe1ea01
     }
   return header
 }
