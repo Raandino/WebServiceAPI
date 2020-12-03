@@ -9,6 +9,12 @@ import {SidebarComponent} from '../Views/sidebar/sidebar.component'
 import {ClientsComponent} from '../Views/clients/clients.component'
 import {ClientListComponent} from '../Views/clients/client-list/client-list.component'
 import {ClientComponent} from '../Views/clients/client/client.component'
+import { InventoryComponent } from '../Views/inventory/inventory.component';
+import { UserComponent } from '../Views/users/user/user.component';
+import { UsersComponent } from '../Views/users/users.component';
+import { OrdersComponent } from '../Views/orders/orders.component';
+import { ProductComponent } from '../Views/products/product/product.component';
+import { ProductsComponent } from '../Views/products/products.component';
 
 
 
@@ -17,7 +23,11 @@ import {ClientComponent} from '../Views/clients/client/client.component'
                   SidebarComponent,
                   ClientListComponent,
                   ClientsComponent,
-                  ClientComponent
+                  ClientComponent,
+                  InventoryComponent,
+                  UsersComponent,
+                  OrdersComponent,
+                  ProductsComponent
                 ],
   imports: [
     CommonModule,

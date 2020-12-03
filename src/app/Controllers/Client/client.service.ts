@@ -30,6 +30,13 @@ export class ClientService {
   //   return this.http.delete(this.rootURL+'/clients/ '+id,this.getHeaders());
   // }
 
+  // refreshList (){
+  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
+    
+  //   .toPromise().then(res => this.list=res as Client[]);
+  // }
+
+
     postClient (form : Client){
     return this.http.post(this.rootURL+'/clients ',this.formData);
     
@@ -43,19 +50,12 @@ export class ClientService {
     return this.http.delete(this.rootURL+'/clients/ '+id);
   }
 
-
-
   refreshList (){
     this.http.get(this.rootURL+'/clients')
     .toPromise().then(res => this.list=res as Client[]);
   }
   
-  // refreshList (){
-  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
-    
-  //   .toPromise().then(res => this.list=res as Client[]);
-  // }
-
+  
 
   
 

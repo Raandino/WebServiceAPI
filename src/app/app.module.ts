@@ -39,17 +39,10 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
 @NgModule({
   declarations: [
     AppComponent,
-
     TokenComponent,
-
-    InventoryComponent,
-    UsersComponent,
-    OrdersComponent,
-    ProductsComponent,
     InventoryListComponent,
     ProductComponent,
     ProductListComponent,
-    UserComponent,
     UserListComponent,
     OrderComponent,
     OrderListComponent,
