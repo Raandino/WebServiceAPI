@@ -32,11 +32,10 @@ export class ClientComponent implements OnInit {
   }
 
 
-  onSubmit (form : NgForm){
-    if (form.value.client_id==null){
-      
+  onSubmit(form: NgForm) {
+    if (form.value.client_id == null) {
       this.insertRecord(form);
-    }else{
+    } else {
       this.updateRecord(form);
     }
   }
@@ -44,8 +43,6 @@ export class ClientComponent implements OnInit {
   updateRecord(form : NgForm){
     this.service.putClient(form.value).subscribe(res =>{
       this.toastr.info('Updated Successfully','Client Register');
-      this.resetForm(form)
-      this.service.refreshList();
       
     })
   }
