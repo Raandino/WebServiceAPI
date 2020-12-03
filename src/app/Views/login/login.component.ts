@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
                       private toastr : ToastrService) { }
 
   ngOnInit(): void {
+    this.service.refreshToken().subscribe((res)=>{
+      this.router.navigateByUrl('/home');
+    })
+
+    
   }
 
   // resetForm (form?: NgForm){

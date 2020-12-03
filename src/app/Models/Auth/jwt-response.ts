@@ -1,5 +1,6 @@
-export interface JwtResponseInterface {
+export type JwtResponseInterface = {
 
     AccessToken: string,
-    ExpiresIn: string
+    ExpiresIn: string,
+    RefreshToken?: string
 }
