@@ -12,7 +12,7 @@ export class TokenService {
         check?: string
   }
   formData : Token
-  readonly rootURL = "https://localhost:44328/api"
+  readonly rootURL = "https://localhost:44391/api"
   constructor(private http : HttpClient,
               ) { 
                 this.tokenInfo = {
@@ -22,9 +22,13 @@ export class TokenService {
               }
 
   
-getToken(){
-  return this.tokenInfo;
-}
+              public getToken():string{
+                if(!this.tokenInfo.AccessToken){
+                  this.tokenInfo.AccessToken= localStorage.getItem("ACCESS_TOKEN");
+                }
+                console.log("Getken: ", this.tokenInfo.AccessToken )
+                return this.tokenInfo.AccessToken;
+              }
 
 postToken (form : Token){
   const test = this.http.post(this.rootURL+'/Token ',this.formData).pipe(tap(

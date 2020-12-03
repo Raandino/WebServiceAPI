@@ -11,7 +11,7 @@ export class ClientService {
 
   formData : Client
   list : Client[];
-  readonly rootURL = "https://localhost:44328/api"
+  readonly rootURL = "https://localhost:44391/api"
 
   constructor(private http : HttpClient,
               private TokenService : TokenService) { }
@@ -37,7 +37,7 @@ export class ClientService {
   // }
   
   refreshList (){
-    this.http.get(this.rootURL+'/clients')
+    this.http.get(this.rootURL+'/clients',this.getHeaders())
     
     .toPromise().then(res => this.list=res as Client[]);
   }
@@ -49,12 +49,15 @@ export class ClientService {
 
 
   getHeaders(){//return the token 
-
+    
     let token=this.TokenService.getToken();
+    console.log(token)
       const header = {
+  
         headers: new HttpHeaders()
-          .set('Authorization',  `Bearer ${token.AccessToken}`)
+          .set('Authorization',  `Bearer ${token}`)
       }
+    console.log(header)
     return header
   }
 }
