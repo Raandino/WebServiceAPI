@@ -1,7 +1,7 @@
 
 
 
-<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+<form #form="ngForm"   autocomplete="off">
     <input type="hidden"  name="client_id" #client_id= "ngModel" [(ngModel)]="service.formData.client_id">
     <div class="form-group">
         <label for="">Name</label>
@@ -24,5 +24,5 @@
         <input name="phone" #phone= "ngModel" [(ngModel)]="service.formData.phone" class="form-control" required>
     </div>
 
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-danger">SUBMIT</button>
+    <button type="submit" (click)="onSubmit(form)"  data-dismiss="modal" [disabled]="form.invalid" class="btn btn-lg btn-block btn-danger">SUBMIT</button>
 </form>

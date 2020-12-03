@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../Controllers/Client/client.service';
 import { Client } from 'src/app/Models/Client/client.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-clients',
@@ -14,6 +15,17 @@ export class ClientsComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+  resetForm (){
+    this.service.formData ={
+      date_created: new Date(),
+      email:'',
+      name:'',
+      password_client: '',
+      phone: null,
+    }
+  }
+
   populateForm(cl: Client){
     this.service.formData = Object.assign({},cl);
   }
