@@ -31,16 +31,16 @@ export class ClientService {
   }
 
 
-  // refreshList (){
-  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
-  //   .toPromise().then(res => this.list=res as Client[]);
-  // }
-  
   refreshList (){
-    this.http.get(this.rootURL+'/clients',this.getHeaders())
-    
+    this.http.get(this.rootURL+'/clients')
     .toPromise().then(res => this.list=res as Client[]);
   }
+  
+  // refreshList (){
+  //   this.http.get(this.rootURL+'/clients',this.getHeaders())
+    
+  //   .toPromise().then(res => this.list=res as Client[]);
+  // }
 
 
   
