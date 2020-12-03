@@ -55,7 +55,7 @@ export class AuthService {
     const refreshToken = localStorage.getItem("andino_shop_refresh");
 
     return this.HttpClient.post<JwtResponseInterface>(`${this.AUTH_SERVER}/Refresh`, {
-      RefreshToken: refreshToken
+      refreshToken: refreshToken
     }).pipe(tap((res: JwtResponseInterface) => {
       if (res) this.saveToken(res)
     }))
