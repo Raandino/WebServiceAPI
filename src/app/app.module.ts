@@ -40,7 +40,6 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
   declarations: [
     AppComponent,
     TokenComponent,
-    InventoryListComponent,
     ProductComponent,
     ProductListComponent,
     UserListComponent,
