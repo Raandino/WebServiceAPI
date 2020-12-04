@@ -41,23 +41,36 @@ export class AuthService {
   private saveToken(jwt: JwtResponseInterface): void {
 
     localStorage.setItem("andino_shop_refresh", JSON.stringify(jwt.RefreshToken));
+    localStorage.setItem("andino_shop_jwt", JSON.stringify(jwt))
+    console.log('Saving Token', jwt)
     this.token = jwt;
+    console.log('This token', this.token)
     this.refreshCycle = window.setInterval(() => {
       this.refreshToken().subscribe();
-    }, this.TOKEN_EXPIRE_CHECK)
+    }, this.TOKEN_EXPIRE_CHECK * 1000)
   }
 
   public getToken(): JwtResponseInterface {
+    console.log('Returning Token', this.token)
+    if(!this.token){
+      return JSON.parse(localStorage.getItem("andino_shop_jwt"))
+    }
     return this.token;
   }
 
   public refreshToken() {
+    console.log('Calling Refresh Token')
     const refreshToken = localStorage.getItem("andino_shop_refresh");
 
     return this.HttpClient.post<JwtResponseInterface>(`${this.AUTH_SERVER}/Refresh`, {
       refreshToken: refreshToken
     }).pipe(tap((res: JwtResponseInterface) => {
-      if (res) this.saveToken(res)
+      if (res) {
+        console.log('Refreshed Token', res)
+        this.saveToken(res)
+      }else{
+        console.log('WTF')
+      }
     }))
   }
 }

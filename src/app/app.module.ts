@@ -20,7 +20,6 @@ import appRoutes from './Router/routerConfig';
 
 // For MDB Angular Free
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { TokenComponent } from './Views/token/token.component';
 import { SidebarComponent } from './Views/sidebar/sidebar.component';
 import { LoginComponent } from './Views/login/login.component';
 import { InventoryComponent } from './Views/inventory/inventory.component';
@@ -39,17 +38,9 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
 @NgModule({
   declarations: [
     AppComponent,
-
-    TokenComponent,
-
-    InventoryComponent,
-    UsersComponent,
-    OrdersComponent,
-    ProductsComponent,
-    InventoryListComponent,
+  
     ProductComponent,
     ProductListComponent,
-    UserComponent,
     UserListComponent,
     OrderComponent,
     OrderListComponent,

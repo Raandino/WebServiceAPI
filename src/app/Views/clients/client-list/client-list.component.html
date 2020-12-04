@@ -4,21 +4,18 @@
     <table class="table content-table w-100"   id="myTable" >
         <thead >
             <tr >
-                <td data-field="Name" data-sortable="true">Name</td>
-                <td data-field="Email" data-sortable="true">Email</td>
-                <td data-field="Password" data-sortable="true">Password</td>
-                <td data-field="Phone" data-sortable="true">Phone</td>
-                <td></td>
+                <td col-4  data-field="Name" data-sortable="true">Name</td>
+                <td col-4  data-field="Email" data-sortable="true">Email</td>
+                <td col-3  data-field="Phone" data-sortable="true">Phone</td>
+                <td col-1 ></td>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let cl of service.list" class="active-row">
-                <td >{{cl.name}}</td>
-                <td >{{cl.email}}</td>
-                <td >{{cl.password_client}}</td>
-                <td >{{cl.phone}}</td>
-
-                <td>
+                <td   >{{cl.name}}</td>
+                <td   >{{cl.email}}</td>
+                <td   >{{cl.phone}}</td>
+                <td >
                     <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
                     <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
                     </td>

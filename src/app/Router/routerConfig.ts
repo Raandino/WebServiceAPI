@@ -9,7 +9,6 @@ import { ClientsComponent }    from '../Views/clients/clients.component';
 import { ClientListComponent } from '../Views/clients/client-list/client-list.component';
 import { ClientService } from '../Controllers/Client/client.service';
 import { RouterModule } from '@angular/router';
-import { TokenComponent } from '../Views/token/token.component';
 import { InventoryComponent } from '../Views/inventory/inventory.component';
 import { OrdersComponent } from '../Views/orders/orders.component';
 import { UsersComponent } from '../Views/users/users.component';
@@ -30,10 +29,6 @@ const appRoutes: Routes = [
   {
     path: 'clients',
     component: ClientsComponent
-  },
-  {
-    path: 'token',
-    component: TokenComponent
   },
   {
     path: 'inventory',
