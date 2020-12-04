@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Address } from '../../Models/Address/address.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { TokenService } from '../../Views/token/token.service';
-
+import {AuthService} from '../Auth/auth.service'
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class AddressService {
   list : Address[];
   readonly rootURL = "https://localhost:44391/api"
   constructor(private http : HttpClient,
-    private TokenService : TokenService) { }
+    private AuthService : AuthService) { }
 
 
 postAddress(form : Address){
@@ -35,11 +34,12 @@ refreshList (){
 }
 
 getHeaders(){
-  let token=this.TokenService.getToken();
+  // let token=this.TokenService.getToken();
     const header = {
-      headers: new HttpHeaders()
-       // .set('Authorization',  `Bearer ${token.AccessToken}`)
+  //     headers: new HttpHeaders()
+  //      // .set('Authorization',  `Bearer ${token.AccessToken}`)
     }
   return header
+  
 }
 }

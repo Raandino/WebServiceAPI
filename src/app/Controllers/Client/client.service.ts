@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Client } from '../../Models/Client/client.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { TokenService } from '../../Views/token/token.service';
-
+import {AuthService} from '../Auth/auth.service'
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class ClientService {
   readonly rootURL = "https://localhost:44391/api"
 
   constructor(private http : HttpClient,
-              private TokenService : TokenService) { }
+              private AuthService : AuthService) { }
 
 
   // postClient (form : Client){
@@ -64,15 +63,15 @@ export class ClientService {
 
   getHeaders(){//return the token 
     
-    let token=this.TokenService.getToken();
-    console.log(token)
-      const header = {
+    //let token=this.TokenService.getToken();
+    // console.log(token)
+    //   const header = {
   
-        headers: new HttpHeaders()
-          .set('Authorization',  `Bearer ${token}`)
-      }
-    console.log(header)
-    return header
+    //     headers: new HttpHeaders()
+    //       .set('Authorization',  `Bearer ${token}`)
+    //   }
+    // console.log(header)
+    // return header
   }
 }
 
