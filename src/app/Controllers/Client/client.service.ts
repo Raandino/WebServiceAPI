@@ -35,7 +35,7 @@ export class ClientService {
   //   .toPromise().then(res => this.list=res as Client[]);
   // }
 
-
+/*---------------------------------------------------------------*/
     postClient (form : Client){
     return this.http.post(this.rootURL+'/clients ',this.formData);
     
