@@ -127,8 +127,7 @@ export class OrderComponent implements OnInit {
               })
               console.log('new form array', newFormArray)
 
-              newFormArray.forEach(value => this.formProducts.push(value))
-              this.formProducts.removeAt(0)
+              this.formProducts.controls = newFormArray
             })
           
           }
