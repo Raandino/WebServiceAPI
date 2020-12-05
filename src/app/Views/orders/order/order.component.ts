@@ -88,7 +88,7 @@ export class OrderComponent implements OnInit {
       if(change.order_id !== 0){
         this.service.retrieve(change.order_id)
         .subscribe(res => {
-         // const orderList = res as Order[]
+          //const orderList = res as Order[]
           const order = orderList.find((value) => value.order_id === change.order_id)
          
           if(order){
