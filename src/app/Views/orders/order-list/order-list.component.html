@@ -31,7 +31,7 @@
                 <td   >{{order.total }}</td>
                 <td >
                     <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(order)" class="icon ion-md-information-circle-outline lead mr-2"></i>
-                    <i (click)="onDelete(Cliente.order_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    <i (click)="onDelete(order.order_id)" class=" icon ion-md-close-circle lead mr-2"></i>
                     </td>
             </tr>
         </tbody>

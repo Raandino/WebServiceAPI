@@ -19,5 +19,13 @@ export class OrderListComponent implements OnInit {
     this.service.formData = order
   }
 
+  
+  onDelete(order_id:number){
+    this.service.delete(order_id).subscribe(res => {
+      this.service.refreshList()
+    })
+    
+  }
+
 
 }

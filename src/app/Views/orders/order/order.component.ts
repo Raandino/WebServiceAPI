@@ -189,6 +189,7 @@ export class OrderComponent implements OnInit {
        this.service.refreshList()
      })).subscribe(handleDetails)
    }
+
   }
 
   
