@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
       form.resetForm();
     }
     this.service.formData ={
-      date_added: new Date(),
+      date_added: null,
       name:'',
       brand_id:null,
       description: '',
