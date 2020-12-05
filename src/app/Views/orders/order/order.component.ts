@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { filter } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { ClientService } from 'src/app/Controllers/Client/client.service';
 import { OrdersService } from 'src/app/Controllers/Orders/orders.service';
 import { ProductsService } from 'src/app/Controllers/Products/products.service';
@@ -110,6 +110,7 @@ export class OrderComponent implements OnInit {
             
             this.service.getDetails(change.order_id).subscribe(res => {
               const details = res as any[]
+              this.formProducts.controls =[]
               const newFormArray = details.map(detail => {
                 const fb = this.createProductForm()
                 console.log(detail)
@@ -181,9 +182,13 @@ export class OrderComponent implements OnInit {
 
     }
    if(!value.order_id){
-    this.service.post(value).subscribe(handleDetails)
+    this.service.post(value).pipe(tap(res => {
+      this.service.refreshList()
+    })).subscribe(handleDetails)
    }else{
-     this.service.putOrder(value).subscribe(handleDetails)
+     this.service.putOrder(value).pipe(tap(res => {
+       this.service.refreshList()
+     })).subscribe(handleDetails)
    }
   }
 
