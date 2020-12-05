@@ -15,16 +15,17 @@ import { OrdersComponent } from '../orders.component';
 export class OrderComponent implements OnInit {
 
   orderForm : FormGroup
-  allProducts = [{
-    product_id: 1,
-    price: 2,
-    name: 'Producto 1'
-  },
-  {
-    product_id: 5006,
-    price: 2,
-    name: 'Producto 1'
-  }]
+  // allProducts = [{
+  //   product_id: 1,
+  //   price: 2,
+  //   name: 'Producto 1'
+  // },
+  // {
+  //   product_id: 5006,
+  //   price: 2,
+  //   name: 'Producto 1'
+  // }]
+  allProducts = []
   clients = []
   @Input() order_id: number
 
@@ -83,9 +84,9 @@ export class OrderComponent implements OnInit {
     this.clientService.get().subscribe(res => {
       this.clients = res 
     })
-    // this.productService.get().subscribe( res => {
-    //   this.allProducts = res as any[]
-    // });
+    this.productService.get().subscribe( res => {
+      this.allProducts = res 
+    });
     this.service.formChange.subscribe(change => {
       if(change.order_id !== 0){
         this.service.retrieve(change.order_id)
@@ -169,7 +170,7 @@ export class OrderComponent implements OnInit {
           if(!copyDetail.subtotal) copyDetail.subtotal = product.price * detail.quantity 
           if(!copyDetail.tax) copyDetail.tax = copyDetail.subtotal * 0.15
           if(!copyDetail.total) copyDetail.total =  copyDetail.tax  + copyDetail.subtotal 
-          if(!copyDetail.order_id) copyDetail.order_id = res?.order_id || value.order_id 
+          if(!copyDetail.order_id) copyDetail.order_id = res || value.order_id 
           if(copyDetail.order_detail){
             this.service.updateDetails(copyDetail).subscribe()
           }else{
