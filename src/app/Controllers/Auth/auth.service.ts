@@ -11,7 +11,7 @@ import { observable, BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
   refreshCycle: number
   TOKEN_EXPIRE_CHECK = 3500
-  AUTH_SERVER: string = 'http://localhost:44391/api'
+  AUTH_SERVER: string = 'http://localhost:63048/api'
   authSubject = new BehaviorSubject(false);
   private token: JwtResponseInterface;
 

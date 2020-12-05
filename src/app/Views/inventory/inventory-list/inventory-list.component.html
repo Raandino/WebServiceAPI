@@ -16,15 +16,19 @@
             </tr>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let cl of service.list" class="active-row">
-                <td >{{cl.name}}</td>
-                <td >{{cl.email}}</td>
-                <td >{{cl.password_client}}</td>
-                <td >{{cl.phone}}</td>
-                <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+            <tr *ngFor="let cl of service.list" class="active-row">
+                <td >{{cl.inventory_id}}</td>
+                <td >{{cl.product_id}}</td>
+                <td >{{cl.user_id}}</td>
+                <td >{{cl.quantity}}</td>
+                <td >{{cl.measure_id}}</td>
+                <td >{{cl.date_created}}</td>
+                <td >{{cl.date_modify}}</td>
+                <td >{{cl.price}}</td>
+                <!-- <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
                     <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
-                    </td>
-            </tr> -->
+                    </td> -->
+            </tr>
         </tbody>
     </table>
 </div>
