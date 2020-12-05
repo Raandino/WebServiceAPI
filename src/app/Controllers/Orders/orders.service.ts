@@ -19,7 +19,7 @@ export class OrdersService extends BaseController<Order> {
     return super.post(data)
   }
   putOrder(form: Order){
-    return this.put(form.order_id);
+    return this.http.put(`${this.rootUrl}/${this.endpoint}/?order_id=${form.order_id}`,form, this.getHeaders())
   }
   
   refreshList(){
@@ -35,4 +35,13 @@ export class OrdersService extends BaseController<Order> {
       return orderDetails.filter(value => value.order_id===order_id)
     }))
   }
+
+  createDetails(data){
+    return this.http.post(`${this.rootUrl}/orderdetail`, data,this.getHeaders())
+  }
+  updateDetails(data){
+    return this.http.put(`${this.rootUrl}/orderdetail/?order_detail=${data.order_detail}`, data,this.getHeaders())
+  }
+
+
 }

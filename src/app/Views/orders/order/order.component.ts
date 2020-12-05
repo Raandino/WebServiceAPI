@@ -35,6 +35,7 @@ export class OrderComponent implements OnInit {
     ) { }
   ngOnInit(): void {
     this.orderForm = this.fb.group({
+      order_id: [0],
       date_order: [new Date() , Validators.required],
       date_delivered: [null],
       client_id: [null, Validators.required],
@@ -42,7 +43,7 @@ export class OrderComponent implements OnInit {
       status_id: [1, Validators.required],
       subtotal: [0],
       total: [0],
-      tax: [0],
+      tax_total: [0],
       delivery : [0],
       order_details : this.fb.array([
         this.createProductForm()
@@ -58,11 +59,12 @@ export class OrderComponent implements OnInit {
       },0)
       const delivery = this.orderForm.get('delivery').value
 
-      const tax = (subtotal + delivery) * 0.15
+      const tax_total = parseFloat(((subtotal + delivery) * 0.15).toFixed(2))
       console.log('delivery', delivery)
-      const total = tax + subtotal + (delivery || 0)
+      const total = tax_total + subtotal + (delivery || 0)
 
-      this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax': tax})
+
+      this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax_total': tax_total})
     })
     this.orderForm.get('delivery').valueChanges
     .subscribe( newDelivery => {
@@ -75,7 +77,7 @@ export class OrderComponent implements OnInit {
       },0)
       const tax_total = parseFloat(((subtotal + newDelivery) * 0.15).toFixed(2))
       const total = tax_total + subtotal + newDelivery 
-      this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax': tax_total})
+      this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax_total': tax_total})
     })
 
     this.clientService.get().subscribe(res => {
@@ -94,8 +96,9 @@ export class OrderComponent implements OnInit {
           if(order){
             console.log(order.subtotal)
             this.orderForm.patchValue({
+              'order_id': order.order_id,
               'client_id': order.client_id,
-              'addres_id': order.address_id,
+              'address_id': order.address_id,
               'status_id': order.status_id,
               'subtotal': order.subtotal,
               'tax_total': order.tax_total,
@@ -111,6 +114,7 @@ export class OrderComponent implements OnInit {
                 const fb = this.createProductForm()
                 console.log(detail)
                 fb.patchValue({
+                  'order_detail': detail.order_detail,
                   'product_id': detail.product_id,
                   'quantity': detail.quantity,
                   'subtotal' :detail.subtotal,
@@ -120,8 +124,12 @@ export class OrderComponent implements OnInit {
                 console.log(fb.value)
                 return fb
               })
-              this.formProducts.setValue(newFormArray)
+              console.log('new form array', newFormArray)
+
+              this.formProducts.push(...newFormArray)
+              this.formProducts.removeAt(0)
             })
+          
           }
         })
       }
@@ -137,7 +145,8 @@ export class OrderComponent implements OnInit {
       quantity: [0, Validators.min(1)],
       subtotal:[0],
       tax:[0],
-      price:[0]
+      price:[0],
+      order_detail: [0]
     })
   }
 
@@ -147,10 +156,35 @@ export class OrderComponent implements OnInit {
   }
 
   onSubmit(value){
-    console.log('ON SUBMIT')
-    this.service.post(value).subscribe(res => {
-      console.log(res)
-    })
+    console.log('ON SUBMIT',value)
+    const handleDetails = res => {
+      console.log('res',res)
+      const order_details = value.order_details
+      order_details.map( detail => {
+        console.log('detail', detail)
+        const copyDetail = detail 
+        const product = this.allProducts.find(value => value.product_id === detail.product_id) 
+        if(product){
+          if(!copyDetail.price) copyDetail.price = product.price 
+          if(!copyDetail.subtotal) copyDetail.subtotal = product.price * detail.quantity 
+          if(!copyDetail.tax) copyDetail.tax = copyDetail.subtotal * 0.15
+          if(!copyDetail.total) copyDetail.total =  copyDetail.tax  + copyDetail.subtotal 
+          if(!copyDetail.order_id) copyDetail.order_id = res?.order_id || value.order_id 
+          if(copyDetail.order_detail){
+            this.service.updateDetails(copyDetail).subscribe()
+          }else{
+            this.service.createDetails(copyDetail).subscribe()
+
+          }
+        }
+      })
+
+    }
+   if(!value.order_id){
+    this.service.post(value).subscribe(handleDetails)
+   }else{
+     this.service.putOrder(value).subscribe(handleDetails)
+   }
   }
 
   

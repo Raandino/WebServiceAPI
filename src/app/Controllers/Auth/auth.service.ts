@@ -10,7 +10,7 @@ import { observable, BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   refreshCycle: number
-  TOKEN_EXPIRE_CHECK = 3500
+  TOKEN_EXPIRE_CHECK = 350
   AUTH_SERVER: string = 'http://localhost:63048/api'
   authSubject = new BehaviorSubject(false);
   private token: JwtResponseInterface;
@@ -47,7 +47,7 @@ export class AuthService {
     console.log('This token', this.token)
     this.refreshCycle = window.setInterval(() => {
       this.refreshToken().subscribe();
-    }, this.TOKEN_EXPIRE_CHECK * 1000)
+    }, this.TOKEN_EXPIRE_CHECK * 100)
   }
 
   public getToken(): JwtResponseInterface {

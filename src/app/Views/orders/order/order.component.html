@@ -17,6 +17,23 @@
         <label for="">Address</label>
         <input formControlName="address_id" class="form-control" type="number">
     </div>
+    <div class="from-group">
+        <label for="">
+            Status
+        </label>
+        <select class="form-control" formControlname="status_id">
+            <option [ngValue]="1">
+                Pendiente
+            </option>
+            <option [ngValue]="2">
+                En Camino
+            </option>
+            <option [ngValue]="3">
+                Entregado
+            </option>
+           
+        </select>
+    </div>
     <div class="form-group" formGroup="products">
         <div class="my-2">
             <label for="" style="margin-right: 15px;">Products</label>
@@ -56,7 +73,7 @@
     </div>
     <div class="form-group">
         <label for="">Tax</label>
-        <input formControlName="tax" class="form-control" disabled type="number">
+        <input formControlName="tax_total" class="form-control" disabled type="number">
     </div>
     <div class="form-group">
         <label for="">Total</label>
