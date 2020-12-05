@@ -39,7 +39,7 @@ export class OrderComponent implements OnInit {
       total: [0],
       tax: [0],
       delivery : [0],
-      products : this.fb.array([
+      order_details : this.fb.array([
         this.createProductForm()
       ])
     })
@@ -75,15 +75,19 @@ export class OrderComponent implements OnInit {
     this.clientService.get().subscribe(res => {
       this.clients = res as any[]
     })
-    this.productService.get().subscribe( res => {
-      this.allProducts = res as any[]
-    });
+    // this.productService.get().subscribe( res => {
+    //   this.allProducts = res as any[]
+    // });
     this.service.formChange.subscribe(change => {
       if(change.order_id !== 0){
         this.service.retrieve(change.order_id)
         .subscribe(res => {
           const orderList = res as Order[]
           const order = orderList.find((value) => value.order_id === change.order_id)
+          const orderDetais = this.service.getDetails(change.order_id).subscribe(res => {
+            console.log('res', res)
+          })
+          console.log(orderDetais)
           if(order){
             console.log(order.subtotal)
             this.orderForm.patchValue({
@@ -97,6 +101,7 @@ export class OrderComponent implements OnInit {
               'date_order': order.date_order,
               'date_delivered': order.date_delivered
             })
+            
           }
         })
       }
@@ -104,7 +109,7 @@ export class OrderComponent implements OnInit {
   }
 
   get formProducts () {
-    return this.orderForm.get('products') as FormArray
+    return this.orderForm.get('order_details') as FormArray
   }
   createProductForm(){
     return this.fb.group({

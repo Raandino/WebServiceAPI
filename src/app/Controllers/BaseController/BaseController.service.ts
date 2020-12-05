@@ -51,4 +51,7 @@ export abstract class  BaseController<T> {
     this._formData = val
     this.formChange.next(this._formData)
   }
+  get formData() {
+    return this._formData
+  }
 }
