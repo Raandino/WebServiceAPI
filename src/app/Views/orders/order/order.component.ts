@@ -191,6 +191,9 @@ export class OrderComponent implements OnInit {
      })).subscribe(handleDetails)
    }
 
+   this.orderForm.reset()
+   this.formProducts.controls=[]
+
   }
 
   
