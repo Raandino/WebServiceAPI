@@ -14,7 +14,9 @@ export class InventoryService extends BaseController<Inventory>{
   }
 
   putInventory(form: Inventory) {
-    return this.put(form.product_id);
+    return this.http.put(`${this.rootUrl}/${this.endpoint}?inventory_id=${form.inventory_id}`,  this.formData,this.getHeaders() )
+
+   // return this.put(form.inventory_id);
   }
 
   refreshList() {

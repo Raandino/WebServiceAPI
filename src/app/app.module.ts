@@ -42,7 +42,7 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
     UserListComponent,
     OrderComponent,
     OrderListComponent,
-    InventoryItemComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,56 @@
-<p>inventory-item works!</p>
+<form #form="ngForm"   autocomplete="off">
+    <input type="hidden"  name="inventory_id" #inventory_id= "ngModel" [(ngModel)]="service.formData.inventory_id">
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="">Product</label>
+                <input name="product_id" #product_id= "ngModel" [(ngModel)]="service.formData.product_id" class="form-control" required>
+                <div class="validation-error" *ngIf="product_id.invalid && product_id.touched ">This Field is required</div>
+            </div>
+            <div class="col">
+                <label for="">Quantity</label>
+                <input name="quantity" #quantity= "ngModel" [(ngModel)]="service.formData.quantity" class="form-control" required>
+                <div class="validation-error" *ngIf="quantity.invalid && quantity.touched ">This Field is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="">Measure</label>
+                <input name="measure_id" #measure_id= "ngModel" [(ngModel)]="service.formData.measure_id" class="form-control" required>
+                <div class="validation-error" *ngIf="measure_id.invalid && measure_id.touched ">This Field is required</div>
+            </div>
+            <div class="col">
+                <label for="">Username</label>
+                <input name="user_id" #user_id= "ngModel" [(ngModel)]="service.formData.user_id" class="form-control" required>
+                <div class="validation-error" *ngIf="user_id.invalid && user_id.touched ">This Field is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="">Price</label>
+                <input name="price" #price= "ngModel" [(ngModel)]="service.formData.price" class="form-control" required>
+                <div class="validation-error" *ngIf="price.invalid && price.touched ">This Field is required</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="">Date Created</label>
+                <input name="date_created" #date_created= "ngModel" [(ngModel)]="service.formData.date_created" class="form-control" required>
+                <div class="validation-error" *ngIf="date_created.invalid && date_created.touched ">This Field is required</div>
+            </div>
+            
+        </div>    </div>
+
+    
+
+    <button type="submit" (click)="onSubmit(form)"  data-dismiss="modal" [disabled]="form.invalid" class="btn btn-lg btn-block btn-danger">SUBMIT</button>
+</form>
