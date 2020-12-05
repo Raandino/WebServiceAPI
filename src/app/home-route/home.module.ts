@@ -33,7 +33,8 @@ import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventor
                   UsersComponent,
                   OrdersComponent,
                   ProductsComponent,
-                  ProductListComponent
+                  ProductListComponent,
+                  ProductComponent
                 ],
   imports: [
     CommonModule,
