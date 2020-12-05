@@ -32,10 +32,12 @@ import { UserComponent } from './Views/users/user/user.component';
 import { OrderComponent } from './Views/orders/order/order.component';
 import { OrderListComponent } from './Views/orders/order-list/order-list.component';
 import { InventoryItemComponent } from './Views/inventory/inventory-item/inventory-item.component';
+import { WelcomeComponent } from './Views/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+   
 
   ],
   imports: [

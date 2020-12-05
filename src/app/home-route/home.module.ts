@@ -21,7 +21,7 @@ import { OrderListComponent } from '../Views/orders/order-list/order-list.compon
 import { OrderComponent } from '../Views/orders/order/order.component';
 import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventory-item.component';
 import { UserListComponent } from '../Views/users/user-list/user-list.component';
-
+import {WelcomeComponent} from '../Views/welcome/welcome.component'
 
 @NgModule({
   declarations: [HomeComponent,
@@ -40,7 +40,8 @@ import { UserListComponent } from '../Views/users/user-list/user-list.component'
                   OrderListComponent,
                   ProductsComponent,
                   ProductListComponent,
-                  ProductComponent
+                  ProductComponent,
+                  WelcomeComponent
                 ],
   imports: [
     CommonModule,

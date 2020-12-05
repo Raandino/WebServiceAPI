@@ -9,11 +9,12 @@ import { InventoryComponent } from '../Views/inventory/inventory.component';
 import { UsersComponent } from '../Views/users/users.component';
 import { OrdersComponent } from '../Views/orders/orders.component';
 import { ProductsComponent } from '../Views/products/products.component';
+import { WelcomeComponent } from '../Views/welcome/welcome.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: SidebarComponent
+    component: WelcomeComponent
   },
   {
     path: 'clients',
