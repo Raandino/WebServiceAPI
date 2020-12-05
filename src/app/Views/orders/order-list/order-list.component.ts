@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from 'src/app/Controllers/Orders/orders.service';
 
 @Component({
   selector: 'app-order-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: OrdersService) { }
 
   ngOnInit(): void {
   }

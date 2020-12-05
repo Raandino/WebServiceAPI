@@ -14,7 +14,7 @@ export abstract class  BaseController<T> {
 
     constructor(private http: HttpClient, private authService: AuthService){}
 
-    protected get<T>(){
+    public get<T>(){
         return this.http.get<T>(`${this.rootUrl}/${this.endpoint}`,this.getHeaders())
     }
 

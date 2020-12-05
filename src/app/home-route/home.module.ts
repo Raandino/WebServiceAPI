@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeComponent } from '../Views/home/home.component'
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {HomeRoutingModule} from './home-routing.module'
 import {SidebarComponent} from '../Views/sidebar/sidebar.component'
 
@@ -16,6 +16,8 @@ import { OrdersComponent } from '../Views/orders/orders.component';
 import { ProductComponent } from '../Views/products/product/product.component';
 import { ProductsComponent } from '../Views/products/products.component';
 import { InventoryListComponent } from '../Views/inventory/inventory-list/inventory-list.component';
+import { OrderListComponent } from '../Views/orders/order-list/order-list.component';
+import { OrderComponent } from '../Views/orders/order/order.component';
 
 
 
@@ -29,13 +31,17 @@ import { InventoryListComponent } from '../Views/inventory/inventory-list/invent
                   InventoryListComponent,
                   UsersComponent,
                   OrdersComponent,
+                  OrderComponent,
+                  OrderListComponent,
                   ProductsComponent
                 ],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: []
 })
