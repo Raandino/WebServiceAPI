@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { InventoryService} from 'src/app/Controllers/Inventory/inventory.service';
+
 
 @Component({
   selector: 'app-inventory',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service : InventoryService) { }
 
   ngOnInit(): void {
   }
+
+  resetForm (form? : NgForm){
+    if(form != null){
+      form.resetForm();
+    }
+    this.service.formData ={
+      Producto: '',
+      username: '',
+      quantity: null,
+      measure: '',
+      date_created: null,
+      date_modify:null,
+      price: null
+}
+    }
 
 }

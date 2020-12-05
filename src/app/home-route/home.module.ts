@@ -16,6 +16,7 @@ import { OrdersComponent } from '../Views/orders/orders.component';
 import { ProductComponent } from '../Views/products/product/product.component';
 import { ProductsComponent } from '../Views/products/products.component';
 import { InventoryListComponent } from '../Views/inventory/inventory-list/inventory-list.component';
+import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventory-item.component';
 
 
 
@@ -27,6 +28,7 @@ import { InventoryListComponent } from '../Views/inventory/inventory-list/invent
                   ClientComponent,
                   InventoryComponent,
                   InventoryListComponent,
+                  InventoryItemComponent,
                   UsersComponent,
                   OrdersComponent,
                   ProductsComponent
