@@ -36,17 +36,10 @@ refreshList (){
 getHeaders(){
   // let token=this.TokenService.getToken();
     const header = {
-<<<<<<< HEAD
       headers: new HttpHeaders()
-<<<<<<< HEAD
-        .set('Authorization',  `Bearer ${token}`)
-=======
        // .set('Authorization',  `Bearer ${token.AccessToken}`)
->>>>>>> acdfb047ffbbb8a9fdcb14edc14cb62a8fe1ea01
-=======
   //     headers: new HttpHeaders()
   //      // .set('Authorization',  `Bearer ${token.AccessToken}`)
->>>>>>> 999e787a92425a9b97b6f36e3b033ee3894b5237
     }
   return header
   
