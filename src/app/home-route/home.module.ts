@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeComponent } from '../Views/home/home.component'
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {HomeRoutingModule} from './home-routing.module'
 import {SidebarComponent} from '../Views/sidebar/sidebar.component'
 
@@ -17,6 +17,8 @@ import { ProductComponent } from '../Views/products/product/product.component';
 import { ProductsComponent } from '../Views/products/products.component';
 import { ProductListComponent } from '../Views/products/product-list/product-list.component';
 import { InventoryListComponent } from '../Views/inventory/inventory-list/inventory-list.component';
+import { OrderListComponent } from '../Views/orders/order-list/order-list.component';
+import { OrderComponent } from '../Views/orders/order/order.component';
 import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventory-item.component';
 import { UserListComponent } from '../Views/users/user-list/user-list.component';
 
@@ -34,6 +36,8 @@ import { UserListComponent } from '../Views/users/user-list/user-list.component'
                   UserComponent,
                   UserListComponent,
                   OrdersComponent,
+                  OrderComponent,
+                  OrderListComponent,
                   ProductsComponent,
                   ProductListComponent,
                   ProductComponent
@@ -42,7 +46,9 @@ import { UserListComponent } from '../Views/users/user-list/user-list.component'
     CommonModule,
     FormsModule,
     HttpClientModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: []
 })

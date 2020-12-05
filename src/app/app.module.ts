@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,13 +36,7 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
 @NgModule({
   declarations: [
     AppComponent,
-  
-  
-   
-   
-    OrderComponent,
-    OrderListComponent,
-   
+
   ],
   imports: [
     BrowserModule,
@@ -57,6 +51,7 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule,
+    ReactiveFormsModule
   ],
   providers: [ClientService],
   bootstrap: [AppComponent],

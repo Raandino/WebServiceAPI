@@ -1,8 +1,8 @@
 export class Order {
     order_id?:number
-    consecutive:string
+    consecutive?:string
     date_order:Date
-    date_delivered: Date
+    date_delivered?: Date
     client_id:number
     address_id: number
     subtotal:number
@@ -10,4 +10,14 @@ export class Order {
     delivery:number
     status_id:number
     total:number
+}
+
+export type OrderDetail  = {
+    product_id : number
+    order_id: number,
+    price: number,
+    tax: number,
+    subtotal:number
+
+
 }

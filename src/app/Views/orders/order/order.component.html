@@ -1,1 +1,66 @@
-<p>order works!</p>
+
+
+
+<form [formGroup]="orderForm"  (ngSubmit)="onSubmit(orderForm.value)" autocomplete="off">
+    <div class="form-group">
+        <label for="">Cliente</label>
+            <select class="form-control" formControlName="client_id">
+                <option [ngValue]="null" disabled>
+                    Select a Client
+                </option>
+                <option *ngFor="let client of clients" [ngValue]="client.client_id">
+                    {{client.name}}
+                </option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="">Address</label>
+        <input formControlName="address_id" class="form-control" type="number">
+    </div>
+    <div class="form-group" formGroup="products">
+        <div class="my-2">
+            <label for="" style="margin-right: 15px;">Products</label>
+            <button class="btn btn-sm btn-info" type="button" (click)="addProduct()">Agregar Producto</button>
+        </div>
+        <div
+         *ngFor="let product of formProducts.controls; let i index">
+            <ng-container [formGroup]="product">
+                <label>
+                    Product
+                    <select class="form-control" formControlName="product">
+                        <option [ngValue]="null" disabled>
+                            Select a Product
+                        </option>
+                        <option *ngFor="let singleProduct of allProducts" [ngValue]="singleProduct">
+                            {{singleProduct.name}}
+                        </option>
+                    </select>
+                </label>
+                <label class="ml-2">
+                    Cantidad
+                    <input formControlName="quantity" class="form-control" type="number">
+
+                </label>
+            </ng-container>
+        </div>
+    </div>
+
+   
+    <div class="form-group">
+        <label for="">Delivery</label>
+        <input formControlName="delivery" class="form-control" type="number">
+    </div>
+    <div class="form-group">
+        <label for="">Subtotal</label>
+        <input formControlName="subtotal" class="form-control" disabled type="number">
+    </div>
+    <div class="form-group">
+        <label for="">Tax</label>
+        <input formControlName="tax" class="form-control" disabled type="number">
+    </div>
+    <div class="form-group">
+        <label for="">Total</label>
+        <input formControlName="total" class="form-control" disabled type="number">
+    </div>
+    <button type="submit"  class="btn btn-lg btn-block btn-danger">SUBMIT</button>
+</form>

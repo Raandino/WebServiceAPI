@@ -1,1 +1,36 @@
-<p>order-list works!</p>
+
+<div class="mx-5 ">
+    
+    <table class="table content-table w-100"   id="myTable" >
+        <thead >
+            <tr >
+                <td col-4  data-field="Name" data-sortable="true">Name</td>
+                <td col-4  data-field="Email" data-sortable="true">Email</td>
+                <td col-3  data-field="Phone" data-sortable="true">Phone</td>
+                <td col-1 ></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cl of service.list" class="active-row">
+                <td   >{{cl.name}}</td>
+                <td   >{{cl.email}}</td>
+                <td   >{{cl.phone}}</td>
+                <td >
+                    <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+                    <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-body">
+                <app-order></app-order>
+            </div>
+        </div>
+    </div>
+</div>
