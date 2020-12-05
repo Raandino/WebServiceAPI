@@ -8,6 +8,7 @@
                 <td data-field="BrandName" data-sortable="true">Brand</td>
                 <td data-field="CategoryName" data-sortable="true">Category</td>
                 <td data-field="Description" data-sortable="true">Description</td>
+                <td data-field="Description" data-sortable="true">Price</td>
                 <td data-field="Description" data-sortable="true">Date Added</td>
                 <td></td>
             </tr>
@@ -19,6 +20,7 @@
                 <td >{{cl.name_brand}}</td>
                 <td >{{cl.name_category}}</td>
                 <td >{{cl.description}}</td>
+                <td >{{cl.price}}</td>
                 <td > {{cl.date_added}} </td>
                 <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
                     <i (click)="onDelete(cl.product_id)" class=" icon ion-md-close-circle lead mr-2"></i>
