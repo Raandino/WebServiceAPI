@@ -37,13 +37,9 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
   declarations: [
     AppComponent,
   
-<<<<<<< HEAD
-    ProductComponent,
-    ProductListComponent,
+  
    
-=======
-    UserListComponent,
->>>>>>> 191c56634445a2b0ce9e507aa193556e2dad0f8c
+   
     OrderComponent,
     OrderListComponent,
    
