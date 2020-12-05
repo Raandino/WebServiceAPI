@@ -81,7 +81,7 @@ export class OrderComponent implements OnInit {
     })
 
     this.clientService.get().subscribe(res => {
-      this.clients = res as any[]
+      this.clients = res 
     })
     // this.productService.get().subscribe( res => {
     //   this.allProducts = res as any[]
