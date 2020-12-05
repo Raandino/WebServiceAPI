@@ -129,10 +129,10 @@ export class OrderComponent implements OnInit {
               console.log('new form array', newFormArray)
 
               this.formProducts.controls = newFormArray
-              const subtotal = this.formProducts.value.reduce( (acc, {product_id, quantity}) => {
+              const subtotal = this.formProducts.value.reduce( (acc, {product_id, quantity, price}) => {
                 const product = this.allProducts.find(value => value.product_id === product_id)
                 if(product_id){
-                  acc += product.price * quantity
+                  acc += (product.price || price)  * quantity
                 }
                 return acc
               },0)
