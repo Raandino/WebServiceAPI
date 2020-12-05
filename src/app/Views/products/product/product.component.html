@@ -11,18 +11,27 @@
 
     <div class="form-group">
         <label for="">Brand</label>
-        <input  name="brand_id" #brand_id= "ngModel" [(ngModel)]="service.formData.brand_id" class="form-control" required>
-        <div class="validation-error" *ngIf="brand_id.invalid && brand_id.touched">
-            This Field is required
-        </div>
+        <select name="brand_id" #brand_id = "ngModel" [(ngModel)]="service.formData.brand_id" class="form-control"  class="browser-default custom-select ">
+            <option selected>Select Brand</option>
+            <option value="1">Coca Cola</option>
+            <option value="2">Pepsi</option>
+            <option value="3">Milca</option>
+            <option value="4">Bimbo</option>
+            <option value="5">Oreo</option>
+            <option value="6">Chips Ahoy</option>
+          </select>
     </div>
 
     <div class="form-group">
-        <label for="">Category</label>
-        <input  name="category_id" #category_id= "ngModel" [(ngModel)]="service.formData.category_id" class="form-control" required>
-        <div class="validation-error" *ngIf="category_id.invalid && category_id.touched">
-            This Field is required
-        </div>
+        <select name="category_id" #category_id= "ngModel" [(ngModel)]="service.formData.category_id" class="form-control"  class="browser-default custom-select ">
+            <option selected>Select Category</option>
+            <option value="1">Alimentos</option>
+            <option value="2">Bebidas</option>
+            <option value="3">Bebé</option>
+            <option value="4">Mascotas</option>
+            <option value="5">Bebidas Alcoholicas</option>
+            <option value="6">Limpieza</option>
+          </select>
     </div>
 
     <div class="form-group">
