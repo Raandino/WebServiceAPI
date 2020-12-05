@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
 
   resetForm(){
     this.service.formData = {
+      order_id : 0,
       date_order : new Date(),
       client_id : 0,
       address_id: 0, 

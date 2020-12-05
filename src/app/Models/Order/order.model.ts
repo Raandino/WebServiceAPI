@@ -4,6 +4,9 @@ export class Order {
     date_order:Date
     date_delivered?: Date
     client_id:number
+    cliente?: string
+    direccion?: string
+    Estado?: string
     address_id: number
     subtotal:number
     tax_total:number
