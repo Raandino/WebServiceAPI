@@ -55,7 +55,7 @@ export class ClientService extends BaseController<Client>{
     // this.http.get(this.rootURL+'/clients', this.getHeaders())
     // .toPromise().then(res => this.list=res as Client[]);
     return this.get().subscribe(res => {
-      this.list = res
+      this.list = res as Client[];
     })
   }
 

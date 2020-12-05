@@ -18,13 +18,13 @@ export abstract class  BaseController<T> {
         return this.http.get<T>(`${this.rootUrl}/${this.endpoint}`,this.getHeaders())
     }
 
-    protected post<T>(){
+    protected post(){
         return this.http.post(`${this.rootUrl}/${this.endpoint}`, this.formData,this.getHeaders() )
     }
-    protected put<T>(id: number){
+    protected put(id: number){
         return this.http.put(`${this.rootUrl}/${this.endpoint}/${id}`, this.formData,this.getHeaders() )
     }
-    protected delete<T>(id: number){
+    protected delete(id: number){
         return this.http.delete(`${this.rootUrl}/${this.endpoint}/${id}`,this.getHeaders() )
     }
 

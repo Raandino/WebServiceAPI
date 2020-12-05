@@ -28,7 +28,7 @@ export class ProductsService extends BaseController<Product> {
 
   refreshList(){
     return this.get().subscribe(res => {
-      this.list = res
+      this.list = res as Product[];
     })
   }
 
