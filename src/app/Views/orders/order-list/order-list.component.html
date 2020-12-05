@@ -4,20 +4,34 @@
     <table class="table content-table w-100"   id="myTable" >
         <thead >
             <tr >
-                <td col-4  data-field="Name" data-sortable="true">Name</td>
-                <td col-4  data-field="Email" data-sortable="true">Email</td>
-                <td col-3  data-field="Phone" data-sortable="true">Phone</td>
+                <td col  data-field="consecutive" data-sortable="true">Consecutivo</td>
+                <td col  data-field="date_order">Fecha de Orden</td>
+                <td col  data-field="date_delivered"  >Fecha Entregada</td>
+                <td col data-field="cliente"  >Cliente</td>
+                <td col data-field="direccion"  >Direccion</td>
+                <td col data-field="Estado"  >Estado</td>
+                <td col data-field="subtotal"  >Subtotal</td>
+                <td col data-field="delivery"  >Envio</td>
+                <td col data-field="tax_total"  >Impuesto</td>
+                <td  col data-field="tax_total">Total</td>
                 <td col-1 ></td>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cl of service.list" class="active-row">
-                <td   >{{cl.name}}</td>
-                <td   >{{cl.email}}</td>
-                <td   >{{cl.phone}}</td>
+            <tr *ngFor="let order of service.list" class="active-row">
+                <td   >{{order.consecutive}}</td>
+                <td   >{{order.date_order}}</td>
+                <td   >{{order.date_delivered }}</td>
+                <td   >{{order.cliente }}</td>
+                <td   >{{order.direccion }}</td>
+                <td   >{{order.Estado }}</td>
+                <td   >{{order.subtotal }}</td>
+                <td   >{{order.tax_total }}</td>
+                <td   >{{order.delivery }}</td>
+                <td   >{{order.total }}</td>
                 <td >
-                    <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
-                    <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    <i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(order)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+                    <i (click)="onDelete(Cliente.order_id)" class=" icon ion-md-close-circle lead mr-2"></i>
                     </td>
             </tr>
         </tbody>
@@ -29,7 +43,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">        
             <div class="modal-body">
-                <app-order></app-order>
+                <app-order ></app-order>
             </div>
         </div>
     </div>
