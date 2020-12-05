@@ -19,6 +19,11 @@ export class OrderComponent implements OnInit {
     product_id: 1,
     price: 2,
     name: 'Producto 1'
+  },
+  {
+    product_id: 5006,
+    price: 2,
+    name: 'Producto 1'
   }]
   clients = []
   @Input() order_id: number
@@ -44,8 +49,9 @@ export class OrderComponent implements OnInit {
       ])
     })
     this.formProducts.valueChanges.subscribe( change => {
-      const subtotal = change.reduce( (acc, {product, quantity}) => {
-        if(product){
+      const subtotal = change.reduce( (acc, {product_id, quantity}) => {
+        const product = this.allProducts.find(value => value.product_id === product_id)
+        if(product_id){
           acc += product.price * quantity
         }
         return acc
@@ -60,15 +66,15 @@ export class OrderComponent implements OnInit {
     })
     this.orderForm.get('delivery').valueChanges
     .subscribe( newDelivery => {
-      const subtotal = this.formProducts.value.reduce( (acc, {product, quantity}) => {
-        if(product){
+      const subtotal = this.formProducts.value.reduce( (acc, {product_id, quantity}) => {
+        const product = this.allProducts.find(value => value.product_id === product_id)
+        if(product_id){
           acc += product.price * quantity
         }
         return acc
       },0)
       const tax_total = parseFloat(((subtotal + newDelivery) * 0.15).toFixed(2))
       const total = tax_total + subtotal + newDelivery 
-
       this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax': tax_total})
     })
 
@@ -84,10 +90,7 @@ export class OrderComponent implements OnInit {
         .subscribe(res => {
           const orderList = res as Order[]
           const order = orderList.find((value) => value.order_id === change.order_id)
-          const orderDetais = this.service.getDetails(change.order_id).subscribe(res => {
-            console.log('res', res)
-          })
-          console.log(orderDetais)
+         
           if(order){
             console.log(order.subtotal)
             this.orderForm.patchValue({
@@ -102,6 +105,23 @@ export class OrderComponent implements OnInit {
               'date_delivered': order.date_delivered
             })
             
+            this.service.getDetails(change.order_id).subscribe(res => {
+              const details = res as any[]
+              const newFormArray = details.map(detail => {
+                const fb = this.createProductForm()
+                console.log(detail)
+                fb.patchValue({
+                  'product_id': detail.product_id,
+                  'quantity': detail.quantity,
+                  'subtotal' :detail.subtotal,
+                  'tax': detail.subtotal,
+                  'price': detail.price
+                })
+                console.log(fb.value)
+                return fb
+              })
+              this.formProducts.setValue(newFormArray)
+            })
           }
         })
       }
@@ -113,8 +133,11 @@ export class OrderComponent implements OnInit {
   }
   createProductForm(){
     return this.fb.group({
-      product: [null],
+      product_id: [null],
       quantity: [0, Validators.min(1)],
+      subtotal:[0],
+      tax:[0],
+      price:[0]
     })
   }
 

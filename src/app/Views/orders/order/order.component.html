@@ -27,11 +27,11 @@
             <ng-container [formGroup]="product">
                 <label>
                     Product
-                    <select class="form-control" formControlName="product">
+                    <select class="form-control" formControlName="product_id">
                         <option [ngValue]="null" disabled>
                             Select a Product
                         </option>
-                        <option *ngFor="let singleProduct of allProducts" [ngValue]="singleProduct">
+                        <option *ngFor="let singleProduct of allProducts" [ngValue]="singleProduct.product_id">
                             {{singleProduct.name}}
                         </option>
                     </select>
