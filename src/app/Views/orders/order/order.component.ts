@@ -129,6 +129,16 @@ export class OrderComponent implements OnInit {
               console.log('new form array', newFormArray)
 
               this.formProducts.controls = newFormArray
+              const subtotal = this.formProducts.value.reduce( (acc, {product_id, quantity}) => {
+                const product = this.allProducts.find(value => value.product_id === product_id)
+                if(product_id){
+                  acc += product.price * quantity
+                }
+                return acc
+              },0)
+              const tax_total = parseFloat(((subtotal + order.delivery ) * 0.15).toFixed(2))
+              const total = tax_total + subtotal + order.delivery 
+              this.orderForm.patchValue({'total': total, 'subtotal': subtotal, 'tax_total': tax_total})
             })
           
           }
