@@ -13,18 +13,18 @@
 
 
 <form #form="ngForm"   autocomplete="off">
-    <input type="hidden"  name="client_id" #client_id= "ngModel" [(ngModel)]="service.formData.client_id">
+    <input type="hidden"  name="user_id" #user_id= "ngModel" [(ngModel)]="service.formData.user_id">
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <label for="">Product</label>
+                <label for="">Name</label>
                 <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
                 <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
             </div>
             <div class="col">
-                <label for="">Quantity</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
+                <label for="">Phone</label>
+                <input name="phone" #phone= "ngModel" [(ngModel)]="service.formData.phone" class="form-control" required>
+                <div class="validation-error" *ngIf="phone.invalid && phone.touched ">This Field is required</div>
             </div>
         </div>
     </div>
@@ -32,23 +32,23 @@
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <label for="">Measure</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
+                <label for="">Email</label>
+                <input name="email" #email= "ngModel" [(ngModel)]="service.formData.email" class="form-control" required>
+                <div class="validation-error" *ngIf="email.invalid && email.touched ">This Field is required</div>
             </div>
             <div class="col">
                 <label for="">Username</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
+                <input name="username" #username= "ngModel" [(ngModel)]="service.formData.username" class="form-control" required>
+                <div class="validation-error" *ngIf="username.invalid && username.touched ">This Field is required</div>
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <label for="">Price</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
+                <label for="">Password</label>
+                <input type="password" name="password_user" #password_user= "ngModel" [(ngModel)]="service.formData.password_user" class="form-control" required>
+                <div class="validation-error" *ngIf="password_user.invalid && password_user.touched ">This Field is required</div>
             </div>
             
         </div>
@@ -57,15 +57,11 @@
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <label for="">Date Created</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
+                <label for="">type_user_id</label>
+                <input name="type_user_id" #type_user_id= "ngModel" [(ngModel)]="service.formData.type_user_id" class="form-control" required>
+                <div class="validation-error" *ngIf="type_user_id.invalid && type_user_id.touched ">This Field is required</div>
             </div>
-            <div class="col">
-                <label for="">Date Modified</label>
-                <input name="name" #name= "ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-                <div class="validation-error" *ngIf="name.invalid && name.touched ">This Field is required</div>
-            </div>
+            
         </div>    </div>
 
     

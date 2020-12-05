@@ -21,7 +21,6 @@ import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventor
 import { UserListComponent } from '../Views/users/user-list/user-list.component';
 
 
-
 @NgModule({
   declarations: [HomeComponent,
                   SidebarComponent,
@@ -32,6 +31,7 @@ import { UserListComponent } from '../Views/users/user-list/user-list.component'
                   InventoryListComponent,
                   InventoryItemComponent,
                   UsersComponent,
+                  UserComponent,
                   UserListComponent,
                   OrdersComponent,
                   ProductsComponent,

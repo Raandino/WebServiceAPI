@@ -33,7 +33,7 @@ export class UserListComponent implements OnInit {
     if(confirm('Are you sure to delete this record?')){
       this.service.delete(id).subscribe(res =>{
         this.service.refreshList();
-        this.toastr.warning('Deleted Successfully','Client Register');
+        this.toastr.warning('Deleted Successfully','User Register');
       })  
     }
     

@@ -5,6 +5,7 @@ export class User {
     email: string
     username:string
     password_user:string
-    type_user_id:number
+    type_user_id?:number
+    rol:string
     date_created:Date
 }
