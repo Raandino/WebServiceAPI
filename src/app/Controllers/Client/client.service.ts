@@ -10,24 +10,24 @@ export class ClientService {
 
   formData : Client
   list : Client[];
-  readonly rootURL = "https://localhost:44391/api"
+  readonly rootURL = "http://localhost:44391/api"
 
   constructor(private http : HttpClient,
               private AuthService : AuthService) { }
 
 
-  // postClient (form : Client){
-  //   return this.http.post(this.rootURL+'/clients ',this.formData,this.getHeaders());
+  postClient (form : Client){
+    return this.http.post(this.rootURL+'/clients ',this.formData,this.getHeaders());
     
-  // }
+  }
 
-  // putClient (form : Client){
-  //   return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData,this.getHeaders());
-  // }
+  putClient (form : Client){
+    return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData,this.getHeaders());
+  }
 
-  // deleteClient(id :number){
-  //   return this.http.delete(this.rootURL+'/clients/ '+id,this.getHeaders());
-  // }
+  deleteClient(id :number){
+    return this.http.delete(this.rootURL+'/clients/ '+id,this.getHeaders());
+  }
 
   // refreshList (){
   //   this.http.get(this.rootURL+'/clients',this.getHeaders())
@@ -36,21 +36,21 @@ export class ClientService {
   // }
 
 
-    postClient (form : Client){
-    return this.http.post(this.rootURL+'/clients ',this.formData);
+  //   postClient (form : Client){
+  //   return this.http.post(this.rootURL+'/clients ',this.formData);
     
-  }
+  // }
 
-  putClient (form : Client){
-    return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData);
-  }
+  // putClient (form : Client){
+  //   return this.http.put(this.rootURL+'/clients/ '+form.client_id,this.formData);
+  // }
 
-  deleteClient(id :number){
-    return this.http.delete(this.rootURL+'/clients/ '+id);
-  }
+  // deleteClient(id :number){
+  //   return this.http.delete(this.rootURL+'/clients/ '+id);
+  // }
 
   refreshList (){
-    this.http.get(this.rootURL+'/clients')
+    this.http.get(this.rootURL+'/clients', this.getHeaders())
     .toPromise().then(res => this.list=res as Client[]);
   }
   
@@ -63,15 +63,15 @@ export class ClientService {
 
   getHeaders(){//return the token 
     
-    //let token=this.TokenService.getToken();
-    // console.log(token)
-    //   const header = {
+    let token=this.AuthService.getToken();
+    console.log(token)
+      const header = {
   
-    //     headers: new HttpHeaders()
-    //       .set('Authorization',  `Bearer ${token}`)
-    //   }
-    // console.log(header)
-    // return header
+        headers: new HttpHeaders()
+          .set('Authorization',  `Bearer ${token.AccessToken}`)
+      }
+    console.log(header)
+    return header
   }
 }
 
