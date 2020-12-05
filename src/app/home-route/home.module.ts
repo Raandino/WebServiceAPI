@@ -15,9 +15,12 @@ import { UsersComponent } from '../Views/users/users.component';
 import { OrdersComponent } from '../Views/orders/orders.component';
 import { ProductComponent } from '../Views/products/product/product.component';
 import { ProductsComponent } from '../Views/products/products.component';
+import { ProductListComponent } from '../Views/products/product-list/product-list.component';
 import { InventoryListComponent } from '../Views/inventory/inventory-list/inventory-list.component';
 import { OrderListComponent } from '../Views/orders/order-list/order-list.component';
 import { OrderComponent } from '../Views/orders/order/order.component';
+import {InventoryItemComponent} from '../Views/inventory/inventory-item/inventory-item.component';
+import { UserListComponent } from '../Views/users/user-list/user-list.component';
 
 
 
@@ -29,11 +32,15 @@ import { OrderComponent } from '../Views/orders/order/order.component';
                   ClientComponent,
                   InventoryComponent,
                   InventoryListComponent,
+                  InventoryItemComponent,
                   UsersComponent,
+                  UserListComponent,
                   OrdersComponent,
                   OrderComponent,
                   OrderListComponent,
-                  ProductsComponent
+                  ProductsComponent,
+                  ProductListComponent,
+                  ProductComponent
                 ],
   imports: [
     CommonModule,

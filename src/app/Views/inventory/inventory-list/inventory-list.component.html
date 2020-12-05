@@ -3,14 +3,12 @@
     <table class="table content-table w-100"   id="myTable" >
         <thead >
             <tr >
-                <td data-field="ProductID" data-sortable="true">ID</td>
-                <td data-field="UserID" data-sortable="true">Name</td>
+                <td data-field="Producto" data-sortable="true">Product</td>
                 <td data-field="Quantity" data-sortable="true">Username</td>
                 <td data-field="MeasureID" data-sortable="true">Quantity</td>
                 <td data-field="CreatedAt" data-sortable="true">Measure</td>
                 <td data-field="ModifiedAt" data-sortable="true">Date Created</td>
                 <td data-field="ModifiedAt" data-sortable="true">Date Modify</td>
-                <td data-field="Price" data-sortable="true">Price</td>
 
 
                 <td></td>
@@ -18,17 +16,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let cl of service.list" class="active-row">
-                <td >{{cl.inventory_id}}</td>
                 <td >{{cl.Producto}}</td>
                 <td >{{cl.username}}</td>
                 <td >{{cl.quantity}}</td>
                 <td >{{cl.measure}}</td>
                 <td >{{cl.date_created}}</td>
                 <td >{{cl.date_modify}}</td>
-                <td >{{cl.price}}</td>
-                <!-- <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
-                    <i (click)="onDelete(cl.client_id)" class=" icon ion-md-close-circle lead mr-2"></i>
-                    </td> -->
+                <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+                    <i (click)="onDelete(cl.inventory_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    </td>
             </tr>
         </tbody>
     </table>
@@ -40,7 +36,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">        
             <div class="modal-body">
-                <!-- <app-client></app-client> -->
+                <app-inventory-item></app-inventory-item>
             </div>
         </div>
     </div>

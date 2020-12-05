@@ -12,7 +12,7 @@ export abstract class  BaseController<T> {
     endpoint : string
 
 
-    constructor(private http: HttpClient, private authService: AuthService){}
+    constructor(public http: HttpClient, private authService: AuthService){}
 
     public get<T>(){
         return this.http.get<T>(`${this.rootUrl}/${this.endpoint}`,this.getHeaders())
@@ -22,14 +22,14 @@ export abstract class  BaseController<T> {
         return this.http.post(`${this.rootUrl}/${this.endpoint}`, this.formData,this.getHeaders() )
     }
     public put(id: number){
-        return this.http.put(`${this.rootUrl}/${this.endpoint}/${id}`, this.formData,this.getHeaders() )
+        return this.http.put(`${this.rootUrl}/${this.endpoint}/${id}`,  this.formData,this.getHeaders() )
     }
     public delete(id: number){
         return this.http.delete(`${this.rootUrl}/${this.endpoint}/${id}`,this.getHeaders() )
     }
 
 
-    private getHeaders(){//return the token 
+    public getHeaders(){//return the token 
     
         let token=this.authService.getToken();
         console.log(token)
