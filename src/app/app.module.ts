@@ -28,7 +28,6 @@ import { OrdersComponent } from './Views/orders/orders.component';
 import { ProductsComponent } from './Views/products/products.component';
 import { InventoryListComponent } from './Views/inventory/inventory-list/inventory-list.component';
 import { ProductComponent } from './Views/products/product/product.component';
-import { ProductListComponent } from './Views/products/product-list/product-list.component';
 import { UserComponent } from './Views/users/user/user.component';
 import { OrderComponent } from './Views/orders/order/order.component';
 import { OrderListComponent } from './Views/orders/order-list/order-list.component';
@@ -38,9 +37,13 @@ import { InventoryItemComponent } from './Views/inventory/inventory-item/invento
   declarations: [
     AppComponent,
   
+<<<<<<< HEAD
     ProductComponent,
     ProductListComponent,
    
+=======
+    UserListComponent,
+>>>>>>> 191c56634445a2b0ce9e507aa193556e2dad0f8c
     OrderComponent,
     OrderListComponent,
    

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ProductsService } from 'src/app/Controllers/Products/products.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service : ProductsService) { }
 
   ngOnInit(): void {
   }
+
+  resetForm (form? : NgForm){
+    if(form != null){
+      form.resetForm();
+    }
+    this.service.formData ={
+      date_added: null,
+      name:'',
+      brand_id:null,
+      description: '',
+      category_id: null ,
+      price: null
+}
+    }
 
 }
