@@ -17,7 +17,7 @@ export abstract class  BaseController<T> {
     constructor(public http: HttpClient, private authService: AuthService){}
 
     public get<T>(){
-        return this.http.get<T>(`${this.rootUrl}/${this.endpoint}`,this.getHeaders())
+        return this.http.get<T[]>(`${this.rootUrl}/${this.endpoint}`,this.getHeaders())
     }
 
     public post(data?:any){
@@ -31,7 +31,7 @@ export abstract class  BaseController<T> {
         return this.http.delete(`${this.rootUrl}/${this.endpoint}/${id}`,this.getHeaders() )
     }
     public retrieve(id){
-      return this.http.get<T>(`${this.rootUrl}/${this.endpoint}/${id}`,this.getHeaders())
+      return this.http.get<T[]>(`${this.rootUrl}/${this.endpoint}/${id}`,this.getHeaders())
     }
 
 

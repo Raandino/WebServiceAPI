@@ -90,7 +90,7 @@ export class OrderComponent implements OnInit {
       if(change.order_id !== 0){
         this.service.retrieve(change.order_id)
         .subscribe(res => {
-          //const orderList = res as Order[]
+          const orderList = res 
           const order = orderList.find((value) => value.order_id === change.order_id)
          
           if(order){
@@ -126,7 +126,7 @@ export class OrderComponent implements OnInit {
               })
               console.log('new form array', newFormArray)
 
-              this.formProducts.push(...newFormArray)
+              newFormArray.forEach(value => this.formProducts.push(value))
               this.formProducts.removeAt(0)
             })
           
