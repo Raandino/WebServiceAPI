@@ -1,1 +1,41 @@
-<p>user-list works!</p>
+
+<div class="mx-5 ">
+    <table class="table content-table w-100"   id="myTable" >
+        <thead >
+            <tr >
+                <td >Name</td>
+                <td >Phone</td>
+                <td >email</td>
+                <td >Username</td>
+                <td >Type User</td>
+
+
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cl of service.list" class="active-row">
+                <td >{{cl.name}}</td>
+                <td >{{cl.phone}}</td>
+                <td >{{cl.email}}</td>
+                <td >{{cl.username}}</td>
+                <td >{{cl.rol}}</td>
+                <td><i  data-toggle="modal" data-target="#exampleModal" (click)="populateForm(cl)" class="icon ion-md-information-circle-outline lead mr-2"></i>
+                    <i (click)="onDelete(cl.user_id)" class=" icon ion-md-close-circle lead mr-2"></i>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-body">
+               <app-user></app-user>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,20 +15,21 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//   resetForm (form? : NgForm){
-//     if(form != null){
-//       form.resetForm();
-//     }
-//     this.service.formData ={
+  resetForm (form? : NgForm){
+    if(form != null){
+      form.resetForm();
+    }
+    this.service.formData ={
       
-//       name:'',
-//       phone:null,
-//       email: '',
-//       username:'',
-//       password_user:'',
-//       type_user_id:null,
-//       date_created:null,
-// }
-//     }
+      name:'',
+      phone:null,
+      email: '',
+      username:'',
+      password_user:'',
+      type_user_id:null,
+      date_created:null,
+      rol: ''
+}
+    }
 
 }
