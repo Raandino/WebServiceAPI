@@ -15,6 +15,7 @@ import { UsersComponent } from '../Views/users/users.component';
 import { OrdersComponent } from '../Views/orders/orders.component';
 import { ProductComponent } from '../Views/products/product/product.component';
 import { ProductsComponent } from '../Views/products/products.component';
+import { ProductListComponent } from '../Views/products/product-list/product-list.component';
 import { InventoryListComponent } from '../Views/inventory/inventory-list/inventory-list.component';
 
 
@@ -29,7 +30,8 @@ import { InventoryListComponent } from '../Views/inventory/inventory-list/invent
                   InventoryListComponent,
                   UsersComponent,
                   OrdersComponent,
-                  ProductsComponent
+                  ProductsComponent,
+                  ProductListComponent
                 ],
   imports: [
     CommonModule,
