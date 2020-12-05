@@ -19,8 +19,12 @@
         <div class="row">
             <div class="col">
                 <label for="">Measure</label>
-                <input name="measure_id" #measure_id= "ngModel" [(ngModel)]="service.formData.measure_id" class="form-control" required>
-                <div class="validation-error" *ngIf="measure_id.invalid && measure_id.touched ">This Field is required</div>
+                <select name="measure_id" #measure_id= "ngModel" [(ngModel)]="service.formData.measure_id" class="form-control"  class="browser-default custom-select ">
+                    <option selected>Select Measure</option>
+                    <option value="1">Kilogramos</option>
+                    <option value="2">Litros</option>
+                </select>
+                
             </div>
             <div class="col">
                 <label for="">Username</label>
