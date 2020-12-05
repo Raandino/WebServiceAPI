@@ -11,7 +11,7 @@ import { observable, BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
   refreshCycle: number
   TOKEN_EXPIRE_CHECK = 3500
-  AUTH_SERVER: string = 'https://localhost:44391/api'
+  AUTH_SERVER: string = 'http://localhost:44391/api'
   authSubject = new BehaviorSubject(false);
   private token: JwtResponseInterface;
 
@@ -40,7 +40,7 @@ export class AuthService {
 
   private saveToken(jwt: JwtResponseInterface): void {
 
-    localStorage.setItem("andino_shop_refresh", JSON.stringify(jwt.RefreshToken));
+    localStorage.setItem("andino_shop_refresh", jwt.RefreshToken);
     localStorage.setItem("andino_shop_jwt", JSON.stringify(jwt))
     console.log('Saving Token', jwt)
     this.token = jwt;
