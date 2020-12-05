@@ -36,6 +36,7 @@ export class UserComponent implements OnInit {
     onSubmit(form: NgForm) {
       if (form.value.user_id == null) {
         this.insertRecord(form);
+        console.log(form);
       } else {
         this.updateRecord(form);
       }
